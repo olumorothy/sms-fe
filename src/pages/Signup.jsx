@@ -1,10 +1,11 @@
 import React from "react";
+import RegistrationForm from "../components/RegistrationForm";
 
 function Signup() {
   return (
-    <div>
-      <h1>Sign Up </h1>
-    </div>
+    <>
+      <RegistrationForm />
+    </>
   );
 }
 

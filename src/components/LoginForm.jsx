@@ -7,10 +7,11 @@ function LoginForm() {
       <form className="form">
         <label htmlFor="email">Email</label>
         <input
-          type="text"
+          type="email"
           id="username"
           className="input"
           autoComplete="off"
+          required
           placeholder="Enter Email here"
         />
         <label htmlFor="password">Password</label>
@@ -20,6 +21,7 @@ function LoginForm() {
           id="password"
           autoComplete="off"
           placeholder="password"
+          required
         />
         <button type="submit">Login</button>
       </form>
