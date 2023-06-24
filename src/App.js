@@ -8,6 +8,11 @@ import Footer from "./components/Footer";
 import StudentHomePage from "./pages/student/StudentHomePage";
 import ExamsPage from "./pages/student/ExamsPage";
 import Questions from "./pages/student/Questions";
+import StaffLogin from "./pages/StaffLogin";
+import TeacherPage from "./pages/teacher/TeacherPage";
+
+import CreateExam from "./pages/teacher/CreateExam";
+import ViewExams from "./pages/teacher/ViewExams";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +38,22 @@ const router = createBrowserRouter([
   {
     path: "/questions",
     element: <Questions />,
+  },
+  {
+    path: "/staffs/login",
+    element: <StaffLogin />,
+  },
+  {
+    path: "/teachers",
+    element: <TeacherPage />,
+  },
+  {
+    path: "/examAdder",
+    element: <CreateExam />,
+  },
+  {
+    path: "/allExams",
+    element: <ViewExams />,
   },
 ]);
 function App() {

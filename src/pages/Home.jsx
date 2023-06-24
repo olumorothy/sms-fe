@@ -3,6 +3,7 @@ import LoginForm from "../components/LoginForm";
 
 import RegistrationCard from "../components/RegistrationCard";
 import ForgottenPasswordCard from "../components/ForgottenPasswordCard";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -20,7 +21,9 @@ function Home() {
           similique accusantium quis culpa doloribus eaque qui molestias hic
           magni ratione!
         </p>
-        <button className="card-btn">Staff Login</button>
+        <Link to="/staffs/login">
+          <button className="card-btn">Staff Login</button>
+        </Link>
       </div>
       <div className="home-cards">
         <div className="login-card">
