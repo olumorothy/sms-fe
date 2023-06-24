@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaUserGraduate } from "react-icons/fa";
 import { GrScorecard } from "react-icons/gr";
 
 import { FcCalendar, FcAddRow } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
+import { getCurrentUser, logoutUser } from "../../utils/helper";
 
 function StudentHomePage() {
   const navigate = useNavigate();
@@ -12,6 +13,16 @@ function StudentHomePage() {
     // Add your custom logic here for handling the click event
     //<Navigate to={cardName} replace={true} />;
     navigate("/exams");
+  };
+  useEffect(() => {
+    const auth = getCurrentUser();
+    if (!auth) {
+      navigate("/");
+    }
+  }, []);
+  const handleLogout = () => {
+    logoutUser();
+    navigate("/");
   };
 
   return (
@@ -70,6 +81,7 @@ function StudentHomePage() {
           </div>
         </div>
       </div>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 }

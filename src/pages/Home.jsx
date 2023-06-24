@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LoginForm from "../components/LoginForm";
 
 import RegistrationCard from "../components/RegistrationCard";
 import ForgottenPasswordCard from "../components/ForgottenPasswordCard";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getCurrentUser } from "../utils/helper";
 
 function Home() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const auth = getCurrentUser();
+
+    //check if auth role is user or admin or Teacher and redirect appropriately
+    if (auth) {
+      navigate("/student");
+    }
+  }, []);
   return (
     <div className="container">
       <p className="text-login">Login/ Registration</p>
